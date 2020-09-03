@@ -1,0 +1,192 @@
+@media (min-width: 500px) {
+    body {
+        width: 75%;
+    }
+}
+@media (min-width: 1100px) {
+    body {
+        width: 50%;
+    }
+}
+body {
+    background-color: whitesmoke;
+    margin: auto;
+}
+h1 {
+    text-align: center;
+}
+#title {
+    display: inline-flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 50px;
+    border-right: 3px solid;
+    animation: digitar 1.5s infinite, move 6s steps(24) infinite normal;
+    white-space: nowrap;
+    overflow: hidden;
+}
+@keyframes digitar {
+    50% {
+       border-color: transparent; 
+    }
+}
+@keyframes move {
+    from {
+        width: 0;
+    }
+    to {
+        width: 50%;
+    }
+}
+.users {
+    width: 100%;
+    display: inline-flex;
+    margin-top: 20px;
+}
+#placar {
+    width: 100%;
+    border: 2px solid;
+    display: inline-flex;
+    border-radius: 20px;
+}
+#placarP1, #placarP2 {
+    font-size: 60px;
+    width: 50%;
+    text-align: center;
+}
+#placarP1 {
+   color: red;
+   border-right: 2px solid black;
+}
+#placarP2 {
+   color: blue;
+}
+.player, .player:focus{
+    width: 100%;
+    height: 60px;
+    font-size: 40px;
+    text-align: start;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid blue;
+    margin: 0 auto 20px auto;
+}
+.player-1{
+    text-align: end !important;
+    margin-right: 20px;
+}
+input:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+} 
+h2{
+    width: 100%;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.espaco{
+    width: 33%;
+    height: 180px;
+    color: transparent;
+    font-size: 150px;
+    border: 0px;
+    margin-left: -4px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.espaco:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+.e1, .e2, .e3, .e4, .e5, .e6 {
+    border-bottom: 6px solid black;
+}
+.e1, .e2, .e4, .e5, .e7, .e8 {
+    border-right: 6px solid black;
+} 
+.preenchido, .o {
+    color: blue;
+}
+.preenchido2, .x {
+    color: red;
+}
+#vez{
+    margin-top: -15px;
+    font-size: 30px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.play{
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+}
+#comecar{
+    width: 40%;
+    height: 60px;
+    border-radius: 40px;
+    color: white;
+    border: none;
+    background-color: rgb(11, 228, 11);    
+    font-size: 30px;
+}
+#comecar:hover{
+    background-color: rgb(10, 173, 10);
+}
+#comecar:focus{
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+.col{
+    width:45%;
+}
+.col-1{
+    width: 10%;
+}
+#ganhador {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+@media (min-width: 500px) {
+    .final {
+        width: 75%;
+    }
+}
+@media (min-width: 1100px) {
+    .final {
+        width: 50%;
+    }
+}
+.final {
+    background-image: url('balls.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 300px;
+    padding: 20px;
+    margin: 10% auto 0 auto;
+    border-radius: 10px;
+}
+.final h1 {
+    font-size: 40px;
+    font-weight: bold;
+    background: rgb(255, 255, 255, 0.3);
+}
+.final button {
+    width: 50%;
+    height: 70px;
+    background-color: red;
+    font-size: 30px;
+    color: white;
+    border-radius: 50px;
+    border: 2px solid red;
+    outline: 0;
+    display: block;
+    margin: 0 auto 0 auto;
+}
+.final button:hover {
+   background-color: rgb(179, 6, 6);
+}
