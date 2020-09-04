@@ -1,0 +1,264 @@
+@media (min-width: 600px) {
+    body {
+        width: 90%;
+    }
+    #addQuestoesFloat {
+        right: 0;
+        top: 20%;
+        right: 20px;
+        width: 80px;
+        height: 80px;
+    }
+}
+@media (min-width: 1100px) {
+    body {
+        width: 65%;
+    }
+    #addQuestoesFloat {
+        right: 0;
+        top: 20%;
+        right: 180px;
+        width: 80px;
+        height: 80px;
+    }
+}
+
+#addQuestoesFloat {
+    position: fixed;
+    color: white;
+    border-radius: 50px;
+    font-size: 50px;
+    outline: 0;
+}
+
+body {
+    margin: 20px auto 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.infos {
+    border: 1px solid;
+    margin-top: 40px;
+    border-radius: 10px;
+    padding-top: 40px;
+}
+.opcoes {
+    border: 1px solid;
+    border-radius: 10px;
+}
+.titulo {
+    padding: 20px;
+    height: 40px;
+}
+#tituloForm, #descricaoForm, .inputQuestao {
+    width: 100%;
+    height: 40px;
+    border: none;  
+    font-size: 22px;
+    outline: 0;  
+}
+.inputQuestao {
+    width: 90%;
+    border-bottom: 3px dotted;
+}
+
+.btnDelQuestao {
+    width: 8%;
+    height: 45px;
+    margin-left: 5px;
+    color: white;
+    border: 1px solid;
+    font-size: 30px;
+    border-radius: 10px;
+    outline: 0;
+    float: right;
+}
+
+#tituloForm, #descricaoForm {
+    border-bottom: 3px solid;
+}
+#tituloFormLabel, #descricaoFormLabel, .labelQuestao {
+    display: inline-flex;
+    font-size: 22px;
+    transform: translateY(-35px);
+}
+#tituloForm:hover + #tituloFormLabel, #tituloForm:focus + #tituloFormLabel, #tituloForm:valid + #tituloFormLabel, 
+#descricaoForm:hover + #descricaoFormLabel, #descricaoForm:focus + #descricaoFormLabel, #descricaoForm:valid + #descricaoFormLabel {
+    transform: translateY(-60px);
+    font-size: 20px;
+    transition: .5s;
+}
+.questao {
+    margin-top: 40px;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 40px 20px 20px 20px;
+    border-left: 15px solid;
+}
+
+h2 {
+    text-align: center;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    height: 60px;
+    line-height: 60px;
+}
+h4 {
+    text-align: center;
+    padding: 10px;
+    margin-top: -10px;
+    color: white;
+    border-radius: 15px 15px 0 0;
+}
+
+#inputQuestao1:hover + #labelQuestao1, #inputQuestao1:focus + #labelQuestao1, #inputQuestao1:valid + #labelQuestao1 {
+    transform: translateY(-60px);
+    font-size: 20px;
+    transition: .5s;
+}
+.opcoesQuestoes {
+    margin-top: 10px;
+    border: 1px solid;
+    border-radius: 20px 20px 0 0;
+}
+.listOpcs {
+    list-style-type: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: -10px;
+}
+.listOpcs li{
+    width: calc(80% / 4);
+    height: 30px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    border-radius: 12px;
+    line-height: 35px;
+    margin-left: 6px;
+    font-size: 15px;
+}
+.li {
+    margin-left: -80px !important;
+}
+h4 {
+    margin-top: 0px;
+}
+.groupListQuests {
+    display: block;
+    padding: 10px;
+}
+.groupListQuests div {
+    margin-top: 10px;
+    height: auto;
+}
+.groupListQuests input {
+    height: 30px;
+    width: 95%;
+    border: none;
+    border-bottom: 3px dotted;
+    outline: 0;
+    font-size: 20px;
+}
+.groupListQuests textarea {
+    width: 95%;
+    border: 3px dotted;
+    outline: 0;
+    font-size: 20px;
+    text-indent: 10px;
+    border-radius: 10px;
+}
+.opcQuest {
+    list-style-type: none;
+    margin-left: -40px;
+    font-size: 22px;
+}
+.opcQuest li{
+    margin-top: 10px;
+}
+.opcQuest input{
+    width: 50%;
+}
+.opcQuest button {
+   width: 10%;
+   height: 32px;
+   font-size: 20px;
+   color: white;
+   border: 1px solid;
+   border-radius: 6px;
+}
+.btnAddOpc {
+   height: 45px;
+   width: 30%;
+   font-size: 20px;
+   color: white;
+   border: 1px solid;
+   border-radius: 6px;
+}
+.opcColors {
+    padding: 20px;
+    font-size: 22px;
+}
+.opcColors input {
+    width: 20px;
+    height: 20px;
+}
+
+.formRed * {
+    border-color: red !important;
+}
+.formRed h2,
+.formRed h4,
+.formRed li,
+.formRed button {
+    background-color: red !important;
+}
+.formBlue * {
+    border-color: blue !important;
+}
+.formBlue h2, 
+.formBlue h4, 
+.formBlue li,
+.formBlue button {
+    background-color: blue !important;
+}
+
+.formGreen * {
+    border-color: green !important;
+}
+.formGreen h2,
+.formGreen h4,
+.formGreen li,
+.formGreen button {
+    background-color: green !important;
+}
+.formPink * {
+    border-color: rgb(233, 17, 168) !important;
+}
+.formPink h2,
+.formPink h4,
+.formPink li,
+.formPink button {
+    background-color: rgb(233, 17, 168) !important;
+}
+.formBlack * {
+    border-color: black !important;
+}
+.formBlack h2,
+.formBlack h4,
+.formBlack li,
+.formBlack button {
+    background-color: black !important;
+}
+
+.formOrange * {
+    border-color: orangered !important;
+}
+.formOrange h2,
+.formOrange h4,
+.formOrange li,
+.formOrange button {
+    background-color: orangered !important;
+}
