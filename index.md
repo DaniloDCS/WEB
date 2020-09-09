@@ -1,16 +1,12 @@
-## Welcome to GitHub Pages
+# Desenvolvimento WEB
+## Projetos
+### Nesta seção você poderá ver alguns do meus projetos pessoais. 
+- Calculadora Básica [Código](https://github.com/DaniloDCS/WEB/tree/master/calculadora)
+- Formulários [Código](https://github.com/DaniloDCS/WEB/tree/master/formulario)
+- Robô Chat [Código](https://github.com/DaniloDCS/WEB/tree/master/chat)
+- Game Tic-Tac-Toe [Código](https://github.com/DaniloDCS/WEB/tree/master/jogo_da_velha)
 
-You can use the [editor on GitHub](https://github.com/DaniloDCS/WEB/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
+```
 # Header 1
 ## Header 2
 ### Header 3
@@ -24,6 +20,8 @@ Syntax highlighted code block
 **Bold** and _Italic_ and `Code` text
 
 [Link](url) and ![Image](src)
+
+````
 ```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
