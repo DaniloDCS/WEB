@@ -1,0 +1,96 @@
+@media (min-width: 600px) {
+    body {
+        width: 75%;
+    }
+}
+@media (min-width: 1200px) {
+    body {
+        width: 45%;
+    }
+}
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: auto;
+    padding: 10px;
+}
+.page-title {
+    text-align: center;
+}
+#timeView, #counterView {
+    padding: 20px;
+}
+#time-title {
+    font-size: 25px;
+    width: 15%;
+    display: block;
+    transform: translateY(-82px);
+    background-color: white;
+    margin-left: 10px;
+    color: red;
+    text-align: center;
+}
+#time-value {
+    width: 100%;
+    height: 60px;
+    font-size: 24px;
+    border: 1px solid red;
+    border-radius: 5px;
+    text-align: center;
+}
+#time-value:focus {
+    outline-color: green;
+}
+#time-value:focus + #time-title {
+    color: green;
+}
+#btn-iniciar, #btn-sair, #btn-pausar, #btn-iniciar2 {
+    width: 50%;
+    height: 70px;
+    margin: auto;
+    display: block;
+    font-size: 24px;
+    color: wheat;
+    font-weight: 600;
+    outline: none;
+}
+#btn-iniciar {
+    background-color: orangered;
+    border: 1px solid orangered;
+}
+#btn-sair {
+    background-color: navy;
+    border: 1px solid navy;
+}
+#btn-pausar {
+    margin-top: 10px;
+    background-color: red;
+    border: 1px solid red;
+}
+#btn-iniciar2 {
+    margin-top: 10px;
+    background-color: green;
+    border: 1px solid green;
+}
+.tempo {
+    display: flex;
+    margin-bottom: 20px;
+}
+.tempo-item {
+    width: 33%;
+    border: 2px solid;
+    margin-left: 20px;
+}
+.tempo-item label {
+    display: block;
+    text-align: center;
+}
+.text-time {
+    font-size: 4em;
+    padding: 40px;
+}
+.text-descricion {
+    font-size: 1.5em;
+    padding: 10px;
+    background-color: black;
+    color: white;
+}
