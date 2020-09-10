@@ -43,7 +43,7 @@ body {
 #time-value:focus + #time-title {
     color: green;
 }
-#btn-iniciar, #btn-sair, #btn-pausar, #btn-reiniciar {
+#btn-iniciar, #btn-pausar, #btn-reiniciar, #btn-continuar {
     width: 50%;
     height: 70px;
     margin: auto;
@@ -57,19 +57,32 @@ body {
     background-color: orangered;
     border: 1px solid orangered;
 }
-#btn-sair {
-    background-color: navy;
-    border: 1px solid navy;
+#btn-iniciar:hover {
+    background-color: rgb(214, 68, 15);
 }
 #btn-pausar {
     margin-top: 10px;
     background-color: red;
     border: 1px solid red;
 }
+#btn-pausar:focus {
+    background-color: rgb(199, 11, 11);
+}
 #btn-reiniciar {
     margin-top: 10px;
     background-color: green;
     border: 1px solid green;
+}
+#btn-reiniciar:hover {
+    background-color: rgb(10, 90, 10);
+}
+#btn-continuar {
+    margin-top: 10px;
+    background-color: blue;
+    border: 1px solid blue;
+}
+#btn-continuar:hover {
+    background-color: rgb(16, 16, 182);
 }
 .tempo {
     display: flex;
