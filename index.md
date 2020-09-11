@@ -1,6 +1,6 @@
 ## 1. Desenvolvimento WEB
 ### Nesta seção você poderá ver alguns do meus projetos pessoais. 
-- Calculadora Básica [Código](https://github.com/DaniloDCS/WEB/tree/master/calculadora)
+- Calculadora Básica [Código](https://codesandbox.io/s/calculadora-basica-7s9z0)
 - Cronômetro [Código](https://github.com/DaniloDCS/WEB/tree/master/cronometro)
 - Formulários [Código](https://github.com/DaniloDCS/WEB/tree/master/formulario)
 - Game Tic-Tac-Toe [Código](https://github.com/DaniloDCS/WEB/tree/master/jogo_da_velha)
