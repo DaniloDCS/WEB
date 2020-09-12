@@ -7,3 +7,6 @@
 - Relógio Digital [Código](https://github.com/DaniloDCS/WEB/tree/master/reologio_digital)
 - Robô Chat [Código](https://github.com/DaniloDCS/WEB/tree/master/chat)
 - Temporizador [Código](https://github.com/DaniloDCS/WEB/tree/master/temporizador)
+
+## Série: Recria APPS
+- EP1 [Código}(https://github.com/DaniloDCS/WEB/tree/master/recriaApp-EP1-nubank)
