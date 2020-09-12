@@ -9,4 +9,4 @@
 - Temporizador [Código](https://github.com/DaniloDCS/WEB/tree/master/temporizador)
 
 ## Série: Recria APPS
-- EP1 [Código}(https://github.com/DaniloDCS/WEB/tree/master/recriaApp-EP1-nubank)
+- EP1 [Código](https://github.com/DaniloDCS/WEB/tree/master/recriaApp-EP1-nubank)
