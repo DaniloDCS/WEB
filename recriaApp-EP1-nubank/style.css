@@ -1,0 +1,429 @@
+@media (min-width: 576px) {
+    body {
+        width: 80%;
+    }
+}
+@media (min-width: 768px) {
+    body {
+        width: 60%;
+    }
+}
+@media (min-width: 992px) {
+    body {
+        width: 50%;
+    }
+}
+@media (min-width: 1200px) {
+    body {
+        width: 30%;
+    }
+}
+body {
+    margin: 20px auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+    background-color: #8A05BE;
+    padding: 10px;
+}
+.container2 {
+    height: 800px;
+    padding: 10px;
+    background-color: #f5f5f5;
+}
+.bloco {
+    margin-top: 20px;
+    height: 700px;
+    overflow-y: auto;
+}
+.bloco::-webkit-scrollbar {
+    width: 6px;
+}
+.bloco::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+.user {
+    width: 100%;
+    height: 80px;
+    position: relative;
+    display: block;
+    padding-top: 40px;
+}
+.username {
+    width: 100%;
+    display: inline-flex;
+    margin: 0 auto 0 auto;
+    color: white;
+    font-size: 30px;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.username label {
+    margin: 10px 0 0 10px;
+}
+.cartaoUso {
+    height: 500px;
+    padding: 0 20px 20px 20px;
+    overflow: auto;
+}
+.cartaoUso::-webkit-scrollbar {
+    width: 6px;
+}
+.cartaoUso::-webkit-scrollbar-thumb {
+    background:  rgb(181, 24, 243);
+}
+.scrool {
+    width: 100%;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+}
+.scrool::-webkit-scrollbar {
+    width: 10px;
+}
+.scrool::-webkit-scrollbar-thumb {
+    background:  transparent;
+}
+.botoes {
+    list-style-type: none;
+    margin: 20px 0 0 0;
+    height: 120px;
+    white-space:nowrap;  
+}
+.btn {
+    width: 20%;
+    height: 80px;
+    color: white;
+    background-color: #b315f1;
+    border: 2px #b315f1;
+    font-size: 20px;
+    padding: 10px;
+    display: inline-block;
+    margin-left: 10px;
+}
+.btn i {
+    float: left;
+    text-align: start;
+    font-size: 22px;
+}
+.btn label {
+    margin-top: 40px;
+    width: auto;
+    height: 50%;
+    display: grid;
+    text-align: left;
+    white-space: pre-line;
+}
+.cartaoUso-item {
+    height: 400px;
+    background-color: white;
+}
+.mt {
+    margin-top: 20px;
+}
+.item-title {
+    display: block;
+    padding: 40px 20px 40px 40px;
+    color:gray;
+    font-size: 1.4em;
+}
+.item-title i {
+    margin-right: 30px;
+}
+.fatura-title, .valor-fatura {
+    color: rgb(11, 180, 180);
+}
+.fatura-title {
+    font-size: 18px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.valor-fatura {
+    font-size: 40px;
+}
+.limite-disponivel {
+    font-size: 18px;
+}
+.limite-disponivel strong {
+    color: rgb(8, 219, 8);
+}
+.ultima-compra {
+    background-color: #f5f5f5;
+    height: 80px;
+    width: 91%;
+    padding: 40px 0 0 40px;
+    color: gray;
+    font-size: 1.2em;
+    display: inline-block;
+}
+.fatura p {
+    padding-left: 40px;
+    margin-top: -10px;
+}
+.ultima-compra i {
+    width: 30px;
+    height: 100%;
+    font-size: 1.4em;
+}
+.ultima-compra label {
+    display: inline-block;
+    margin-left: 20px;
+    width: 80%;
+}
+.conta {
+    padding: 40px 0px 30px 40px;
+}
+.conta p {
+    font-size: 18px;
+    color: gray;
+}
+.conta strong {
+    display: flex;
+    margin-top: -20px;
+    font-size: 2em;
+}
+.mt-1 {
+    margin-top: 28px;
+}
+.text-center {
+    text-align: center;
+}
+.fa-gift {
+    font-size: 1.4em;
+}
+.rewards {
+    text-align: center;
+    font-size: 1.4em;
+}
+.btn-rewards {
+    background-color: transparent;
+    width: 80%;
+    height: 60px;
+    margin-left: 25px;
+    border-radius: 5px;
+    border: 1px solid #8A05BE;
+    color: #8A05BE;
+    font-weight: 600;
+    display: block;
+    font-size: 1em;
+}
+.bars {
+    width: 8px;
+    height: 55.6%;
+    float: right;
+}
+.barFatura, .barDisponiel {
+    display: flex;
+    width: 100%;
+    border-radius: 10px;
+}
+.barFatura {
+    background-color: rgb(11, 180, 180);
+}
+.barDisponiel {
+    background-color: rgb(8, 219, 8);
+}
+.detalhesFatura {
+    padding: 10px;
+}
+.detalhesFatura-opc {
+    color: gray;
+    display: block;
+    font-size: 1.5em;
+}
+.fa-search {
+   float: right;
+   margin-left: 20px;
+}
+.detalhesFatura-uso {
+    height: 500px;
+    margin-top: 40px;
+}
+.mt-5 {
+    padding-top: 200px;
+}
+.h-100 {
+    height: 100%;
+}
+.botoes-detalhes div {
+    color: #8A05BE;
+    background-color: #f5f5f5;
+    border: 1px solid rgb(192, 188, 188);
+    margin-left: -10px;
+}
+.list-item-compra {
+    padding: 10px;
+    font-size: 1.3em;
+    color: rgb(93, 91, 91);  
+    margin-top: 40px;
+}
+.list-item-compra i {
+    float: left;
+    width: 10%;
+    text-align: center;
+    font-size: 1.4em;
+    margin-right: 20px;
+}
+.compras-detalhes {
+    display: flex;
+}
+.compras-detalhes div {
+    width: 50%;
+}
+.compras-detalhes div label {
+    margin-bottom: 10px;
+}
+.data, .valor {
+    display: block;
+    text-align: right;
+}
+.data1, .valor1 {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.text-nubank {
+    color: #8A05BE;
+}
+.h1 {
+    font-size: 1.5em;
+}
+.h2 {
+    font-size: 1.2em;
+}
+.p1 {
+    padding: 10px;
+}
+.p2 {
+    padding: 20px;
+}
+.pl-1 {
+    padding-left: 10px;
+}
+.pl-2 {
+    padding-left: 20px;
+}
+.ml1 {
+    margin-left: 10px;
+}
+.ml2 {
+    margin-left: 20px;
+}
+.float-left {
+    float: left;
+}
+.float-right{
+    float: right;
+}
+.d-block {
+    display: inline-block;
+}
+.d-flex {
+    display: flex;
+}
+.items {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.fa-angle-down, .fa-angle-up {
+    color: white;
+    width: 100%;
+}
+.back-nu {
+    background-color: #8A05BE;
+}
+.list-menu-user {
+    color: white;
+    list-style-type: none;
+    font-size: 22px;
+    margin-left: -30px;
+}
+.list-menu-user li{
+    border-top: 2px solid;
+    height: 40px;
+    padding: 20px 10px 0 10px;
+}
+.list-menu-user li:hover{
+    background-color: rgb(0, 0, 0, 0.2);
+}
+.inputPagar {
+    font-size: 50px;
+    border: none;
+    display: inline-flex;
+    width: 80%;
+    background-color: transparent;
+    outline: 0;
+}
+.pagaments {
+    padding-left: 30px;
+    padding-top: 20px;
+}
+.pagaments label {
+    font-size: 50px;
+}
+.pagaments span {
+    margin-top: 30px;
+    display: inline-block;
+    font-size: 22px;
+}
+.pagaments button, .btn-confirm {
+    font-size: 22px;
+    width: 100%;
+    height: 50px;
+    border:none;
+    border-top: 1px solid rgb(195, 188, 188);
+    background: transparent;
+    margin-top: 540px ;
+    outline: 0;
+}
+.fimPagamento input {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    background-color: transparent;
+    border: none;
+    font-size: 2.8em;
+    border-bottom: 1px dotted rgb(195, 188, 188);
+    outline: 0;
+}
+.fimPagamento p {
+    color: rgb(93, 91, 91);
+    font-size: 18px;
+}
+.w-100 {
+    width: 100%;
+}
+.bg-transparent {
+    background-color: transparent;
+}
+.senha {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 1px solid rgb(93, 91, 91);
+    outline: 0;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 20px;
+}
