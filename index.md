@@ -9,6 +9,6 @@
 - Temporizador [Código](https://github.com/DaniloDCS/WEB/tree/master/temporizador)
 
 ## Série: Recria APPS
-- EP01 Nubank [Código](https://github.com/DaniloDCS/WEB/tree/master/recriaApp-EP1-nubank)
-- EP02 Instagram [Código](https://github.com/DaniloDCS/WEB/tree/master/instagrma)
-- EP03 Google Sala de Aula [Código](https://github.com/DaniloDCS/WEB/tree/master/classroom)
+- EP 01 - Nubank [Código](https://github.com/DaniloDCS/WEB/tree/master/recriaApp-EP1-nubank)
+- EP 02 - Instagram [Código](https://github.com/DaniloDCS/WEB/tree/master/instagrma)
+- EP 03 - Google Sala de Aula [Código](https://github.com/DaniloDCS/WEB/tree/master/classroom)
