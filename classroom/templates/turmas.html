@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="../styles/turmas.css">
+<div>
+    <nav class="nav">
+        <div class="appName">
+            <i class="fas fa-align-justify"></i>
+            <img class="ml-2" src="../logo.png" width="90" height="30" alt="">
+            <label class="title ml-2">Sala de Aula</label>
+        </div>
+        <div class="opcs">
+            <i class="fas fa-plus ml-3"></i>
+            <i class="fas fa-th ml-3"></i>
+            <img class="my-img ml-3" src="../dev_fullstack.jpg" width="40" alt="">
+        </div>
+    </nav>
+    <div class="turmas">
+        <div>
+            <a class="link" href=""><i class="fas fa-list-ol"></i> Pendentes</a>
+            <a class="link" href=""><i class="far fa-calendar"></i> Agenda</a>
+        </div>
+        <div class="listTurmas">
+            <div class="listTurmasItem" ng-repeat="turma in turmas">
+                <div class="descricao" style="background-image: url('{{turma.tema}}');">
+                    <h1>
+                        <a class="name-disciplina" href="/#!/turma/{{$index}}">{{turma.descricao | limitTo:18}} {{turma.descricao.length > 18 ? '...' : ''}} <i class="fas fa-ellipsis-v float-right"></i> </a>
+                    </h1>
+                    <p class="professor">{{turma.professor}}</p>
+                </div>
+                <img src="{{turma.img}}" class="foto-professor" width="85" height="85" alt="">
+                <div class="avaliacoes">
+
+                </div>
+                <div class="item-opc">
+                    <i class="fas fa-id-card-alt" aria-label='Abrir seu trabalho para " {{turma.descricao}} "'></i>
+                    <i class="far fa-folder" aria-label='Abrir pasta de "{{turma.descricao}}" no Google Drive'></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
