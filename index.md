@@ -1,14 +1,15 @@
 ## 1. Desenvolvimento WEB
 ### Nesta seção você poderá ver alguns do meus projetos pessoais. 
-- Calculadora Básica [Código](https://codesandbox.io/s/calculadora-basica-7s9z0)
-- Cronômetro [Código](https://github.com/DaniloDCS/WEB/tree/master/cronometro)
-- Formulários [Código](https://github.com/DaniloDCS/WEB/tree/master/formulario)
-- Game Tic-Tac-Toe [Código](https://github.com/DaniloDCS/WEB/tree/master/jogo_da_velha)
-- Relógio Digital [Código](https://github.com/DaniloDCS/WEB/tree/master/reologio_digital)
-- Robô Chat [Código](https://github.com/DaniloDCS/WEB/tree/master/chat)
-- Temporizador [Código](https://github.com/DaniloDCS/WEB/tree/master/temporizador)
+- Calculadora Básica [Acessar código](https://github.com/DaniloDCS/WEB/tree/master/Caculator)[Acessar compilado](https://codesandbox.io/s/calculadora-basica-7s9z0)
+- Cronômetro [Acessar código](https://github.com/DaniloDCS/WEB/tree/master/Stopwatch)
+- Formulários [Acessar código](https://github.com/DaniloDCS/WEB/tree/master/Form)
+- Game Tic-Tac-Toe [Acessar código](https://github.com/DaniloDCS/WEB/tree/master/TicTacToe)
+- Relógio Digital [Acessar código](https://github.com/DaniloDCS/WEB/tree/master/DigitalClock)
+- Robô Chat [Acessar código](https://github.com/DaniloDCS/WEB/tree/master/Chat)
+- Temporizador [Acessar código](https://github.com/DaniloDCS/WEB/tree/master/Timer)
+- Tester API REST [Acessar código](https://github.com/DaniloDCS/WEB/tree/master/TesterApiRest)
 
 ## Série: Recria APPS
-- EP 01 - Nubank [Código](https://github.com/DaniloDCS/WEB/tree/master/recriaApp-EP1-nubank)
-- EP 02 - Instagram [Código](https://github.com/DaniloDCS/WEB/tree/master/instagram)
-- EP 03 - Google Sala de Aula [Código](https://github.com/DaniloDCS/WEB/tree/master/classroom)
+- EP 01 - Nubank [Acessar código](https://github.com/DaniloDCS/WEB/tree/master/Nubank)
+- EP 02 - Instagram [Acessar código](https://github.com/DaniloDCS/WEB/tree/master/Instagram)
+- EP 03 - Google Sala de Aula [Acessar código](https://github.com/DaniloDCS/WEB/tree/master/Classroom)
