@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="../styles/turma.css">
+
+<div>
+    <nav class="nav">
+        <div class="appName">
+            <i class="fas fa-align-justify"></i>
+            <label class="title ml-2">{{turma.descricao}}</label>
+        </div>
+        <div class="list-opc-turma">
+            <ul class="opc-tumas">
+                <li ng-click="viewMural = false; viewAtividades = true; viewPessoas = true ; btnSelect1 = 'btnSelect' ; btnSelect2 = '' ; btnSelect3 = '' "
+                    ng-class="btnSelect1">Mural</li>
+                <li ng-click="viewMural = true; viewAtividades = false; viewPessoas = true ;  btnSelect1 = '' ; btnSelect2 = 'btnSelect' ; btnSelect3 = '' "
+                    ng-class="btnSelect2">Atividades</li>
+                <li ng-click="viewMural = true; viewAtividades = true; viewPessoas = false ;  btnSelect1 = '' ; btnSelect2 = '' ; btnSelect3 = 'btnSelect' "
+                    ng-class="btnSelect3">Pessoas</li>
+            </ul>
+        </div>
+        <div class="opcs">
+            <i class="fas fa-th ml-3"></i>
+            <img class="my-img ml-3" src="../dev_fullstack.jpg" width="40" alt="">
+        </div>
+    </nav>
+    <div class="content">
+        <div class="content-head">
+            <div class="tema" style="background-image: url('{{turma.tema}}');">
+                <div>{{turma.descricao}}</div>
+            </div>
+        </div>
+        <div class="content-body">
+            <div class="mural" ng-hide="viewMural">
+                <div class="proximas-atvs">
+                    <h3>Próximas atividades</h3>
+                    <label for="">
+                        Nenhuma atividade para a próxima semana!
+                    </label>
+                    <button>Visualizar tudo</button>
+                </div>
+                <div class="comentario">
+                    <img src="../dev_fullstack.jpg" class="img" alt="">
+                    <label ng-click="viewBox = false">Compartilhe algo com sua turma...</label>
+                </div>
+            </div>
+            <div class="atividades" ng-hide="viewAtividades">
+                <h1 class="nao-ha">Não há nada aqui!</h1>
+            </div>
+            <div class="pessoas" ng-hide="viewPessoas">
+                <h1 class="nao-ha">Não há nada aqui!</h1>
+            </div>
+            </div>
+        </div>
+</div>
+
+<div class="floot" ng-hide="viewBox">
+    <div class="box">
+        <div class="box-title">
+            <label for=""> <i class="far fa-comment-alt"></i> Postar</label>
+            <i class="fas fa-times closed" ng-click="viewBox = true"></i>
+        </div>
+        <div class="box-body">
+            <div>
+                <textarea name="" id="" cols="30" rows="10" required="false"></textarea>
+                <samp class="cress"></samp>
+                <label for="">Compartilhar com sua turma</label>
+            </div>
+        </div>
+        <div class="box-footer">
+            <button class="btn-adicionar"> <i class="fas fa-paperclip"></i> Adicionar</button>
+            <button class="btn-postar">Postar</button>
+            <button class="btn-cancelar" ng-click="viewBox = true">Cancelar</button>
+        </div>
+    </div>
+</div>

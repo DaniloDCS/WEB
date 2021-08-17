@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOGO DA VELHA</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" async></script>
+</head>
+<body>
+    <h1 id="h1">
+        <label id="title"> # JOGO DA VELHA #</label>
+    </h1>
+
+    <div class="users">
+        <div class="col">
+            <input type="text" class="player player-1" id="p1" placeholder="Player 1">
+        </div>
+        <div class="col-1">
+            <h2>VS</h2>
+        </div>
+        <div class="col">
+            <input id="p2" type="text" class="player" placeholder="Player 2">
+        </div>
+    </div>
+    <p id="placar">
+        <label id="placarP1">0</label>
+        <label id="placarP2">0</label>
+    </p>
+    <div class="play">
+        <button id="comecar" onClick="play()">PLAY</button>
+    </div>
+    <p id="vez">É a sua vez </p>
+    <div class="tabuleiro" id="tabuleiro">
+        <button class="espaco e1" onClick="jogar(this)" id="1"> 0  </button>
+        <button class="espaco e2" onClick="jogar(this)" id="2"> 0 </button>
+        <button class="espaco e3" onClick="jogar(this)" id="3"> 0 </button>
+       
+        <button class="espaco e4" onClick="jogar(this)" id="4"> 0 </button>
+        <button class="espaco e5" onClick="jogar(this)" id="5"> 0 </button>
+        <button class="espaco e6" onClick="jogar(this)" id="6"> 0 </button>
+       
+        <button class="espaco e7" onClick="jogar(this)" id="7"> 0 </button>
+        <button class="espaco e8" onClick="jogar(this)" id="8"> 0 </button>
+        <button class="espaco e9" onClick="jogar(this)" id="9"> 0 </button>
+    </div>
+    <div id="ganhador">
+        <div class="final">
+            <h1 id="mensagemFinal"> </h1>
+            <button id="reply">Jogar Novamente</button>
+        </div>
+    </div>
+</body>
+</html>

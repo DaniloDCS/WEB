@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple REST API Tester</title>
+    <link rel="stylesheet" href="styles.css">
+    <script async src="rest.js"></script>
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
+</head>
+
+<body>
+    <div class="content">
+        <div class="row">
+            <h1 class="h1">{ Simple REST API Tester }</h1>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2 class="h2 title"> <i class="fas fa-arrow-circle-up"></i> Request</h2>
+                <form onsubmit="return false;">
+                    <div class="search">
+                        <select name="" id="method">
+                            <option value="GET" selected >GET</option>
+                            <option value="POST">POST</option>
+                            <option value="PUT">PUT</option>
+                            <option value="DELETE">DELETE</option>
+                        </select>
+                        <input type="text" value="https://api.github.com/users/DaniloDCS/repos" id="url" placeholder="URL">
+                        <button id="btn-send"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </form>
+                <div class="form-controls">
+                    <label id="forms-body" class="selected" onclick="showAndHidden(1, false, 1)">
+                        <i class="fas fa-edit"></i>
+                    </label>
+                    <label id="forms-form" class="no-selected" for="form" onclick="showAndHidden(2, false, 1)">
+                        <i class="fas fa-list-ul"></i>
+                    </label>
+                </div>
+                <div id="query-view">
+                    <textarea name="" id="query"></textarea>
+                </div>
+                <div id="forms-view">
+                    <div id="form-components">
+                        <div class="component">
+                            <div class="component-item">
+                                <input type="text" id="cpk1" required>
+                                <label for=""><i class="fas fa-key"></i> Key</label>
+                            </div>
+                            <div class="component-item">
+                                <input type="text" id="cpv1" required>
+                                <label for=""><i class="fas fa-keyboard"></i> Value</label>
+                            </div>
+                            <div class="component-item d-flex-center">
+                                <button>
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                                <input type="checkbox" name="" id="">
+                            </div>
+                        </div>
+                    </div>
+                    <button id="btn-new-component">
+                        <i class="fas fa-plus-square"></i>
+                        Add New Component
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="response">
+                    <h2 class="h2 title"><i class="fas fa-arrow-circle-down"></i> Response</h2>
+                </div>
+                <div class="options">
+                    <div class="result-request">
+                        <span id="status-request"></span>
+                        <span id="timer-request"></span>
+                    </div>
+                    <div class="options-response">
+                        <button onclick="copy()">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                        <button onclick="clearing()">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                        <button onclick="showAndHidden('floating', false, 2)">
+                            <i class="fas fa-history"></i>
+                        </button>
+                        <button onclick="clearing()">
+                            <i class="fas fa-file-download"></i>
+                        </button>
+                    </div>
+                </div>
+                <div id="teste">
+                    <div id="response"></div>
+                    <div id="charging">
+                        <div class="bars">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row links-for-developed">
+            <h2 class="h2">Developed by:</h2>
+            <a class="link-instagram" href="https://instagram.com/danilo.xhtml" target="_blank">
+                <i class="fab fa-instagram"></i>| @danilo.xhtml
+            </a>
+            <a class="link-instagram" href="https://instagram.com/positrontechnology" target="_blank">
+                <i class="fab fa-instagram"></i>| @positrontechnology
+            </a>
+            <a class="link-github" href="https://github.com/DaniloDCS" target="_blank">
+                <i class="fab fa-github"></i>| @DaniloDCS
+            </a>
+            <a class="link-linkedin" href="https://linkedin.com/danillo-costta" target="_blank">
+                <i class="fab fa-linkedin"></i>| Danilo Costa
+            </a>
+        </div>
+    </div>
+    <div id="floating" class="floating">
+        <div class="box">
+            <div class="box-head">
+                <h2 class="h2">History</h2>
+                <i onclick="showAndHidden('floating', true, 2)" class="fas fa-times"></i>
+            </div>
+            <div id="history" class="box-body"></div>
+        </div>
+    </div>
+</body>
+
+</html>

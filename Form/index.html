@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" async></script>
+    <style id="style"></style>
+</head>
+<body id="body" class="formRed">
+    <div class="form">
+        <h2>Opções de Formulário</h2>
+        <div class="opcoes">
+            <h4>Cores</h4>
+            <div class="opcColors">
+                <input type="radio" name="color" id="corVermelha" value="1" checked> Vermelho
+
+                <input type="radio" name="color" id="corAzul"> Azul
+
+                <input type="radio" name="color" id="corVerde"> Verde
+            
+                <input type="radio" name="color" id="corRosa"> Rosa
+            
+                <input type="radio" name="color" id="corPreta"> Preto
+            
+                <input type="radio" name="color" id="corLaranja"> Laranja
+            </div>
+        </div>
+        <h2>Informações</h2>
+        <div class="infos">
+            <div class="titulo">
+                <input type="text" id="tituloForm" required="false">
+                <label id="tituloFormLabel">Título do Formulário</label>
+            </div>
+            <div class="titulo">
+                <input type="text" id="descricaoForm" required="false">
+                <label id="descricaoFormLabel">Descrição do Formulário</label>
+            </div>
+        </div>
+        <h2>Questões</h2>
+        <div id="questoes">
+        </div>
+        <button id="addQuestoesFloat">&plus;</button>
+    </div>
+</body>
+</html>

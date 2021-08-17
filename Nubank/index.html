@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="script.js"></script>
+</head>
+<body ng-controller="appCtrl">
+
+    <div class="container" ng-hide="inicio">
+        <div class="user">
+            <label class="username">
+                <img width="50px" src="white.svg" alt="">
+                <label>{{user}} </label>
+            </label>
+            <i class="fas fa-angle-down h1 text-center" ng-hide="!dados" ng-click="dados = false"></i>
+            <i class="fas fa-angle-up h1 text-center" ng-hide="dados" ng-click="dados = true"></i>
+        </div>
+        <div class="cartaoUso">
+            <div ng-class="cartaoUso-item back-nu" ng-hide="dados">
+                <ul class="list-menu-user ">
+                    <li><i class="fas fa-question-circle"></i> Me ajuda <i class="fas fa-angle-right float-right"></i> </li>
+                    <li><i class="fas fa-user"></i> Perfil <i class="fas fa-angle-right float-right"></i></li>
+                    <li><i class="fas fa-coins"></i> Configurar conta <i class="fas fa-angle-right float-right"></i></li>
+                    <li><i class="fas fa-credit-card"></i> Configurar Cartão<i class="fas fa-angle-right float-right"></i></li>
+                    <li><i class="fas fa-store"></i> Pedir conta PJ<i class="fas fa-angle-right float-right"></i></li>
+                    <li><i class="fas fa-mobile-alt"></i> Configurações do app<i class="fas fa-angle-right float-right"></i></li>
+                </ul>
+            </div>
+            <div class="bars mt">
+                <label class="barFatura" style="height: {{faturaAtual * 100 / limiteTotal}}% "></label>
+                <label class="barDisponiel" style="height: {{limiteDisponel * 100 / limiteTotal}}% "></label>
+            </div>
+            <div class="cartaoUso-item mt" ng-click="detalhesFatura = false ; inicio = true">
+                <label class="item-title"> <i class="fas fa-credit-card"></i> Cartão de Crédito</label>
+                    <div class="fatura mt">
+                        <p class="fatura-title">FATURA ATUAL </p>
+                        <p class="valor-fatura">R$ <strong>{{faturaAtual}}</strong></p>
+                        <p class="limite-disponivel">Limite disponível <strong> R$ {{limiteDisponel}}</strong></p>
+                    </div>
+                <div class="ultima-compra " ng-click="detalhesFatura = false ; inicio = true">
+                    <div ng-if="compras[0].classificacao == 'Super Mercado'">
+                        <i class="fas fa-shopping-cart float-left"></i>
+                    </div>
+                    <div ng-if="compras[0].classificacao == 'Lazer'">
+                        <i class="fas fa-futbol float-left"></i>
+                    </div>
+                    <div ng-if="compras[0].classificacao == 'Eletrônicos'">
+                        <i class="fas fa-gamepad float-left"></i>
+                    </div>
+                    <div ng-if="compras[0].classificacao == 'Educação'">
+                        <i class="fas fa-book-open float-left"></i>
+                    </div>
+                    <div ng-if="compras[0].classificacao == 'Serviços'">
+                        <i class="fas fa-utensils float-left"></i>
+                    </div>
+                    <div ng-if="compras[0].classificacao == 'Casa'">
+                        <i class="fas fa-home float-left"></i>
+                    </div>
+                    <div ng-if="compras[0].classificacao == 'Recarga'">
+                        <i class="fas fa-mobile-alt float-left"></i>
+                    </div>
+                    <label> Compra mais recente em {{compras[0].estabelecimento}} <br> no valor de R$ {{compras[0].valor}} ...</label>
+                </div>
+            </div>
+            <div class="cartaoUso-item mt">
+                <label class="item-title" ng-hide="btnEye"> <i class="fas fa-coins"></i> Conta <i class="fas fa-eye float-right" ng-click="btnEye = true ; viewSaldo = true"></i> </label>        
+                <label class="item-title" ng-hide="!btnEye"> <i class="fas fa-coins"></i> Conta <i class="fas fa-eye-slash float-right" ng-click="btnEye = false ; viewSaldo = false"></i> </label>        
+                <div class="conta">
+                    <p class="conta-title">Saldo Disponível</p>
+                    <strong ng-hide="viewSaldo">R$ {{poupanca}}</strong>
+                </div>
+                <div class="ultima-compra mt-1">
+                    <i class="fas fa-credit-card"></i>
+                    <label> Fatura do cartão no valor de R$ 100,00 ...</label>
+                </div>
+            </div>
+            <div class="cartaoUso-item mt">
+                <label class="item-title text-center"> <i class="fas fa-gift"></i></label>
+                <p class="rewards">
+                    <strong>Nubank Rewards</strong> <br><br>
+                    Acumule pontos que nunca <br>
+                    expiram e troque por passagens <br>
+                    aéreas ou serviços que você <br> 
+                    realmente usa.
+                </p>
+                <div class="ultima-compra mt-1">
+                    <button class="btn-rewards"> ATIVE O SEU REWARDS </button>
+                </div>
+            </div>
+        </div>
+        <div class="scrool">
+            <div class="botoes">
+                <div class="btn">
+                    <i class="fas fa-comments-dollar"></i>
+                    <label> <br> Pix</label>
+                </div>
+                <div class="btn">
+                    <i class="fas fa-comments-dollar"></i>
+                    <label> <br> Cobrar</label>
+                </div>
+                <div class="btn" ng-click="pagamentos = false ; inicio = true">
+                    <i class="fas fa-barcode"></i>
+                    <label> <br> Pagar</label>
+                </div>
+                <div class="btn">
+                    <i class="fas fa-redo-alt"></i>
+                    <label> <br> Transferir</label>
+                </div>
+                <div class="btn">
+                    <i class="fas fa-redo-alt"></i>
+                    <label> <br> Depositar</label>
+                </div>
+                <div class="btn">
+                    <i class="fas fa-credit-card"></i>
+                    <label>Cartão Virtual</label>
+                </div>
+                <div class="btn">
+                    <i class="fas fa-lock-open"></i>
+                    <label>Bloquaer Cartão</label>
+                </div>
+                <div class="btn">
+                    <i class="fas fa-sliders-h"></i>
+                    <label>Ajustar limite</label>
+                </div>
+                <div class="btn">
+                    <i class="fas fa-user-plus"></i>
+                    <label>Indicar amigos</label>
+                </div>
+                <div class="btn">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <label><br> Doação</label>
+                </div>
+                <div class="btn">
+                    <i class="fas fa-mobile-alt"></i>
+                    <label>Recarga de celular</label>
+                </div>
+                <div class="btn">
+                    <i class="fas fa-question-circle"></i>
+                    <label> <br> Me ajuda</label>
+                </div>
+                <div class="btn">
+                    <i class="fas fa-stream"></i>
+                    <label>Organizar  atalhos</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container2" ng-hide="detalhesFatura">
+        <div class="detalhesFatura">
+            <label class="detalhesFatura-opc"> 
+                <i class="fas fa-credit-card" ng-click="detalhesFatura = true ; inicio = false"></i> 
+                <i class="fas fa-question-circle float-right ml1"></i>
+                <i class="fas fa-search "></i>
+            </label>
+            <div class="bloco">
+                <div class="detalhesFatura-uso">
+                    <div class="bars h-100">
+                        <label class="barFatura" style="height: {{faturaAtual * 100 / limiteTotal}}% "></label>
+                        <label class="barDisponiel" style="height: {{limiteDisponel * 100 / limiteTotal}}% "></label>
+                    </div>
+                    <div class="fatura mt-5">
+                        <p class="fatura-title">Fatura Atual </p>
+                        <p class="valor-fatura">R$ <strong>{{faturaAtual}}</strong></p>
+                        <p class="limite-disponivel">Limite disponível <strong> R$ {{limiteDisponel}}</strong></p>
+                    </div>
+                </div>
+                <div class="scrool">
+                    <div class="botoes botoes-detalhes">
+                        <div class="btn">
+                            <i class="fas fa-barcode"></i>
+                            <label> Pagar fatura</label>
+                        </div>
+                        <div class="btn">
+                            <i class="fas fa-list-ul"></i>
+                            <label> Resumo da Tarefas</label>
+                        </div>
+                        <div class="btn">
+                            <i class="fas fa-sliders-h"></i>
+                            <label>Ajustar limite</label>
+                        </div>
+                        <div class="btn">
+                            <i class="fas fa-credit-card"></i>
+                            <label>Cartão Virtual</label>
+                        </div>
+                        <div class="btn">
+                            <i class="fas fa-lock"></i>
+                            <label>Bloquaer Cartão</label>
+                        </div>
+                        <div class="btn">
+                            <i class="fas fa-user-plus"></i>
+                            <label>Indicar amigos</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="lista-compras" ng-repeat="item in compras">
+                    <div class="list-item-compra">
+                        <div ng-if="item.classificacao == 'Super Mercado'">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div ng-if="item.classificacao == 'Lazer'">
+                            <i class="fas fa-futbol"></i>
+                        </div>
+                        <div ng-if="item.classificacao == 'Eletrônicos'">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <div ng-if="item.classificacao == 'Educação'">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div ng-if="item.classificacao == 'Serviços'">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div ng-if="item.classificacao == 'Casa'">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div ng-if="item.classificacao == 'Recarga'">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="compras-detalhes">
+                            <div>
+                                <label class="data1">{{item.classificacao}}</label> 
+                                <strong class="valor1">{{item.estabelecimento}}</strong>
+                            </div>
+                            <div>
+                                <label class="data">{{item.data}}</label>
+                                <strong class="valor">R$ {{item.valor}}</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container2" ng-hide="pagamentos">
+        <i class="fas fa-angle-left h1" ng-click="inicio = false; pagamentos = true"></i>
+        <div class="cartaoUso-item pl-2 d-flex w-100 bg-transparent" ng-click="pagarFatura = false; pagamentos = true">
+           <div class="items ml-2">
+                <i class="fas fa-credit-card text-nubank h1 float-left h-100"></i>
+                <strong class="h1 ml1">Pagar fatura do cartão</strong>
+                <p class="h2">Gere um boleto ou pague com a <br> conta do Nubank</p>
+           </div>
+        </div>
+        <div class="cartaoUso-item pl-2 mt w-100 bg-transparent">
+            <div class="items">
+                <i class="fas fa-barcode text-nubank h1 float-left h-100"></i>
+                <strong class="h1 ml1">Pagar um boleto</strong>
+                <p class="h2 ml1">Contas de luz, água, etc.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container2 pagaments" ng-hide="pagarFatura">
+        <p class="h1"><strong>Qunato</strong> você quer pagar?</p>
+        <label for="">R$</label> 
+        <input type="text" ng-model="valPagar" ng-value="faturaAtual" class="inputPagar" aria-selected="true">
+        <span>Fatura atual: R$ {{faturaAtual}}</span>
+        <span>A fatura continuará <strong>aberta</strong>, com fechamento em 19 SET</span>
+        <button class="text-nubank" ng-click="fimPagamento = false; pagarFatura = true">CONTINUAR</button>
+    </div>
+    <div class="container2 fimPagamento" ng-hide="fimPagamento">
+        <h1 class="h1 text-center mt-2">Você está pagando</h1>
+        <input type="text" name="" id="" class="text-center text-nubank" ng-value="'R$ ' + valPagar" readonly>
+        <p class="text-center">Vencimento da fatura 26 SET</p>
+        <p class="p2 mt "> <label for="" class="float-left">Fatura Atual</label> <strong class="float-right d-flex">R$ {{faturaAtual}}</strong></p>
+        <div class="cartaoUso-item pl-2 d-flex w-100 bg-transparent" ng-click="fimPagamento = true; senha = false">
+            <div class="items ml-2">
+                <i class="fas fa-coins text-nubank h1 float-left h-100"></i>
+                <strong class="h1 ml1">Pagar com a conta do Nubank</strong>
+                <p class="h1 ml1">O limite do seu cartão será liberado <br> em até 30 minutos.</p>
+            </div>
+        </div>
+        <div class="pl-2 d-flex w-100 bg-transparent">
+            <div class="items">
+                <i class="fas fa-barcode text-nubank h1 float-left h-100"></i>
+                <strong class="h1 ml1">Gerar um boleto</strong>
+                <p class="h1 ml1">O pagamento do boleto será <br> reconhecido em até 3 dias úteis</p>
+            </div>
+        </div>
+    </div>
+    <div class="container2 seha p2 " ng-hide="senha" id="digitarSenha">
+        <h1>Digite sua <strong class="text-nubank">senha de 4 dígitos</strong></h1>
+        <input type="password" onKeyup="pular(this)" id="ipt1" maxlength="1" class="senha">
+        <input type="password" onKeyup="pular(this)" id="ipt2" maxlength="1" class="senha">
+        <input type="password" onKeyup="pular(this)" id="ipt3" maxlength="1" class="senha">
+        <input type="password" maxlength="1" id="ipt4" class="senha">
+
+        <button class="text-nubank btn-confirm" ng-click="senha = true; inicio = false; pagar(valPagar)" >PAGAR</button>
+    </div>
+</body>
+</html>

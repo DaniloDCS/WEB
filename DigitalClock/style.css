@@ -1,0 +1,48 @@
+@media (min-width: 600px) {
+    .time-view {
+        width: 75%;
+    }   
+}
+@media (min-width: 1100px) {
+    .time-view {
+        width: 40%;
+    }   
+}
+.time-view {
+    margin: auto;
+    margin-top: 200px;
+    display: flex;
+}
+.time-item {
+    width: 32%;
+    margin-left: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.time-item label {
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+.time-title {
+    background-color: black;
+    font-size: 1.5em;
+    color: white;
+    border: 1px solid black;
+    border-radius: 0 0 10px 10px;
+    padding: 5px 0 5px 0;
+}
+#hours, #minutes, #seconds {
+    font-size: 10em;
+    color: rgb(22, 226, 22);
+    font-family: fantasy;
+}
+#data {
+    width: 80%;
+    margin: auto;
+    margin-top: 60px;
+    text-align: center;
+    font-size: 3.5em;
+    border-bottom: 4px solid;
+}
+

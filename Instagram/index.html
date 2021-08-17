@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="app.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body ng-controller="appCtrl">
+    <div ng-hide="publish">
+        <div class="container bb-1">
+            <div class="topo ft-5 d-flex pl-2 pb-1 pr-2 pt-2">
+                <i class="fas fa-camera pt-0"></i>
+                <label class="w-75 d-grid text-left ml-2 title-app">{{app}}</label>
+                <i class="fas fa-search ml-4 pt-0"></i>
+                <i class="far fa-paper-plane ml-2 pt-0" ng-click="publish = true; myDirects = false"></i>
+            </div>
+        </div>
+        <div class="container scroll">
+            <div class="storys">
+                <ul class="d-flex">
+                    <li class="story" ng-repeat="story in storys">
+                        <img src="{{story.userImg}}" alt="" ng-click="storysVisualizar($index)">
+                        <label>{{story.userName}}</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="publicacoes bt-1 mb-2">
+                <div class="publish pt-1" ng-repeat="post in posts.posts">
+                    <div class="publishUser d-flex">
+                        <img src="{{post.userImg}}" alt="" class="imgUser float-left">
+                        <label class="mt-1 ml-1 d-block w-75 ft-3 mr-4"><strong>{{post.user}}</strong></label>
+                        <i class="fas fa-ellipsis-v ft-3 mt-1"></i>
+                    </div>
+                    <div>
+                        <img src="{{post.img}}" alt="" class="img-post mt-2" ng-dblclick="likePhoto($index)">
+                        <div class="liking d-flex imgLike" id="like{{$index}}" style="display: none;">
+                            <i class="fas fa-heart ml-auto mr-auto mt-auto mb-auto text-center likee"></i>
+                        </div>
+                    </div>
+                    <div class="ft-5 pt-1 pl-1 pr-1">
+                        <i class="far fa-heart" ng-click="likePhoto($index)" id="img{{$index}}"></i>
+                        <i class="far fa-comment ml-1" ng-click="listCommentsP($index)"></i>
+                        <i class="far fa-paper-plane ml-1"></i>
+                        <i class="far fa-bookmark float-right" ng-click="savePhoto($index)" id="mark{{$index}}"></i>
+                        <div class="ft-3 mt-1">
+                            curtido por 
+                            <strong>dev_fullstack_</strong>
+                            e
+                            <strong>outras pessoas</strong>
+                        </div>
+                        <div class="ft-3" ng-repeat="comment in post.comentarios | limitTo : 1" ng-if="$index < 2">
+                            <strong>{{comment.user}}</strong>
+                            <label> {{comment.com | limitTo: 20}}{{comment.com.length > 15 ? '...' : ''}}</label>
+                        </div>
+                        <small class="ft-2 mt-1 text-left d-flex w-100">{{post.data}}</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container pt-2 bt-1">
+            <div class="menu d-flex" style="font-size: 40px;">
+                <i class="fas fa-home ml-auto mr-auto"></i>
+                <i class="far fa-play-circle ml-auto mr-auto"></i>
+                <i class="far fa-plus-square ml-auto mr-auto"></i>
+                <i class="far fa-heart ml-auto mr-auto"></i>
+                <img src="{{userLogedImg}}" width="40px" alt="" class="ml-auto mr-auto r-2">
+            </div>
+        </div>
+    </div>
+    <div class="container" ng-hide="myDirects">
+        <div class="pt-2 pb-2 d-flex bb-1 mb-1">
+            <i class="fas fa-arrow-left ft-4 mr-2" ng-click="publish = false; myDirects = true"></i>
+            <strong class="ft-3 w-75">{{userLoged}}</strong>
+            <i class="fas fa-list-ul ft-4 ml-2"></i>
+            <i class="far fa-edit ft-4 ml-2"></i>
+        </div>
+        <div class="b-1 r-0 p-1 ft-4">
+           <i class="fas fa-search"></i> 
+           <input type="text" class="b-none ml-1 ft-3 out-none w-75" placeholder="Pesquisar" ng-model="valBusca" ng-click="directs = friends">
+           <i class="fas fa-sliders-h float-right mr-1"></i>
+        </div>
+        <div class="pt-3 mb-1 ft-3">
+            <strong class="bb-1 p-1">PRINCIPAL</strong>
+            <strong>GERAL</strong>
+        </div>
+        <div ng-repeat="direct in directs | filter:valBusca">
+            <div class="d-flex p-1">
+                <img src="{{direct.userImg}}" alt="" class="float-left imgUser">
+                <div class="d-block w-75 ft-3 ml-1">
+                    <label class="d-block">{{direct.user}}</label>
+                    <label class="d-block text-gray">{{direct.ultima}}</label>
+                </div> 
+                <i class="fas fa-camera ft-5"></i>
+            </div>
+        </div>
+    </div>
+    <div class="container" ng-hide="viewComments">
+        <div class="p-1 d-flex ft-4 bb-1">
+            <i class="fas fa-arrow-left" ng-click="publish = false ; viewComments = true"></i>
+            <label class="ml-3 w-75">Comentários</label>
+            <i class="far fa-paper-plane float-right ml-3"></i>
+        </div>
+        <div class="lists">
+            <div class="ft-3 mt-2" ng-repeat="comm in posts.posts['post' + commentsP].comentarios">
+                <img src="{{comm.userImg}}" class="float-left imgUser" alt="">
+                <strong class="mt-1 ml-1">{{comm.user}}</strong>
+                <label> {{comm.com}}</label> <br>
+                <label class="text-gray d-flex pt-1 ml-1">{{comm.data}} <strong class="ml-4 text-gray">Responder</strong></label>
+            </div>
+        </div>
+        <div>
+            <ul class="icons bt-1 bb-1 pt-1 pb-1">
+                <li ng-click="addIcon(9996)">&#9996;</li>
+                <li ng-click="addIcon(128074)">&#128074;</li>
+                <li ng-click="addIcon(128079)">&#128079;</li>
+                <li ng-click="addIcon(129304)">&#129304;</li>
+                <li ng-click="addIcon(128151)">&#128151;</li>
+                <li ng-click="addIcon(128525)">&#128525;</li>
+                <li ng-click="addIcon(128557)">&#128557;</li>
+                <li ng-click="addIcon(128514)">&#128514;</li>
+                <li ng-click="addIcon(128293)">&#128293;</li>
+                <li ng-click="addIcon(128640)">&#128640;</li>
+            </ul>
+        </div>
+        <div class="d-flex">
+            <img src="{{userLogedImg}}" class="imgUser mt-2 float-left" alt="">
+            <textarea type="text" rows="1" ng-model="meuComentario" class="b-none w-75 mt-3 ml-2 ft-3 out-none" placeholder="Comentar como {{userLoged}}..." id="inputComentario"></textarea>
+            <button class="out-none ft-3 bg-transparent b-none color-blue pt-3" ng-click="publishComennt(commentsP, meuComentario) ; meuComentario = ''">Publicar</button>
+        </div>
+    </div>
+    <div ng-hide="viewStory" class="container " ng-click="storysVisualizar(dadosStory.index + 1)" 
+        style="background: url({{dadosStory.story.img}}) no-repeat; background-size: 100% 1000px;">
+        <div class="d-block p-1 pl-2 text-gray">
+            <div class="d-flex bg-gray mr-3 barStory">
+                <div class="bar"></div>
+            </div>
+            <div class="mt-2 w-100">
+                <img src="{{dadosStory.userImg}}" class="imgUser float-left" alt="">
+                <label class="ft-3 pt-1 ml-1 especial">{{dadosStory.userName}}</label>
+                <label class="ft-3 pt-1 ml-1 especial text-gray ml-2 w-25">{{dadosStory.story.horas}}</label>
+                <i class="fas fa-ellipsis-v ft-4 float-right mr-4 especial"></i>
+            </div>
+        </div>
+        <div class="bg-transparent d-flex" style="margin-top: 780px;">
+            <input type="text" name="" id="" class="w-100 p-1 mb-2 ml-1 b-1 r-2 b-none out-none ft-3 bg-transparent text-white" placeholder="Enviar mensagem">
+            <i class="far fa-paper-plane ft-5 p-1 especial"></i>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "REST",
+  "version": "1.0.0",
+  "description": "Simple REST API Tester",
+  "main": "rest.js",
+  "repository": "https://github.com/DaniloDCS/WEB",
+  "author": "Danilo Costa | @positrontechnology | @danilo.xhtml",
+  "license": "MIT",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4"
+  }
+}

@@ -1,0 +1,116 @@
+html {
+    height: 100%;
+}
+body {
+    height: 80%;
+}
+@media (min-width: 500px) {
+    #chat {
+        width: 50%;
+        height: 100%;
+    } 
+}
+@media (min-width: 1200px) {
+    #chat {
+        width: 26%;
+        height: 100%;
+    } 
+}
+#chat {
+    background: #f5f5f5;
+    padding: 0;
+    margin: 0 auto 0 auto;
+    font-size: 22px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#listMensagens {
+    height: 100%;
+    display: block;
+    background: #f5f5f5;
+    overflow: auto;
+    padding: 10px 20px 0 20px;
+    flex-direction: column;
+    clear: both;
+}
+.msg {
+    width: 100%;
+    height: auto;
+    min-height: 50px;
+    margin-top: 6px;
+    font-size: 24px;
+}
+.msg_left, .msg_right {
+    width: 55%;
+    height: auto;
+    min-height: 10px;
+    display: grid;
+    padding: 10px;
+    line-height: 30px;
+}
+.msg_left {
+    background: #bbb8b8;
+    border-radius: 0px 14px 14px 14px;
+}
+.msg_right {
+    background: rgb(10, 10, 180);
+    color: white;
+    float: right;
+    margin-bottom: 10px;
+    border-radius: 14px 0px 14px 14px;
+}
+.remetente {
+    height: 50px;
+    background: rgb(10, 10, 180);
+    color: white;
+    padding: 20px;
+}
+input {
+    width: 80%;
+    height: 45px;
+    border-radius: 40px;
+    text-indent: 20px;
+    font-size: 20px;
+    outline: 0;
+}
+#btnEnviar {
+    outline: 0;
+    width: 14%;
+    height: 60px;
+    font-size: 20px;
+    border-radius: 50%;
+    color: white;
+    background: rgb(10, 10, 180);
+}
+#btnEnviar:focus {
+    background: rgb(6, 6, 70);
+}
+img {
+    margin: auto;
+    border-radius: 50px;
+    float: left;
+}
+#robot {
+    font-size: 30px;
+    margin: 6px 0 0 10px;
+    display: inline-flex;
+}
+.new {
+    background: #f5f5f5;
+    padding: 0 10px 0 10px;
+}
+small {
+    display: block;
+    text-align: right;
+    margin-right: 10px;
+}
+i {
+    color: green;
+    font-weight: bold;
+    font-size: 22px;
+}
+::-webkit-scrollbar {
+    width: 3px;
+}
+::-webkit-scrollbar-thumb {
+    background:rgb(139, 134, 134);
+}
