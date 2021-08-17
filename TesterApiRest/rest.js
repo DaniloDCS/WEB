@@ -1,3 +1,5 @@
+// TODO: trocar todos os var's por const, ou no pior dos casos, let
+
 var search = document.querySelector("#url")
 var method = document.querySelector("#method")
 var response = document.querySelector("#response")
@@ -56,6 +58,8 @@ queryBody.addEventListener("keyup", event => {
 var statusRequest = document.querySelector("#status-request")
 var timerRequest = document.querySelector("#timer-request")
 
+// TODO: Mudar request para fetch API ou axios
+
 function request(method, url) {
 
     document.querySelector("#charging").style.display = "flex"
@@ -79,6 +83,7 @@ function request(method, url) {
             req.send(params)
         } else {
             params = {}
+            // TODO: trocar por forEach
             for (let c = 1; c <= componentCont; c++) {
                 let key = document.querySelector("#cpk" + c).value
                 let val = document.querySelector("#cpv" + c).value
